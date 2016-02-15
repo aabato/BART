@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *instructionsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startNewGameButton;
 
+@property (strong, nonatomic) NSMutableArray *numberOfPressesPerTurn;
 @property (assign, nonatomic) NSUInteger numberOfTurns;
 @property (assign, nonatomic) NSUInteger popLevel;
 @property (assign, nonatomic) NSUInteger inflations;
@@ -54,7 +55,7 @@
     self.balloon.hidden = NO;
     self.balloon.frame = CGRectMake(0,0,self.width, self.height);
     self.balloon.center = self.balloon.superview.center;
-    self.popLevel = arc4random_uniform(20);
+    self.popLevel = arc4random_uniform(10) + 5;
     self.totalPoints = 0;
     self.currentTurnPoints = 0;
     self.numberOfTurns = 40;
